@@ -7,10 +7,11 @@ import turtle
 
 while True:
     try:
-        number_of_hexagons = int(input('Введите количество шестиугольников: '))
-        if 4 <= number_of_hexagons <= 20:
+        get_num_hexagons = int(input('Введите количество шестиугольников: '))
+        if 4 <= get_num_hexagons <= 20:
            break
         else:
             print('Введите число от 4 до 20')
     except ValueError:
         print('Неверный формат')
+print(get_num_hexagons)
