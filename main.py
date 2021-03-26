@@ -9,7 +9,7 @@ def color():
     color = input("Пожалуйста, введите цвет: ")
     while True:
         if color.lower() in color_lists:
-                        if color.lower() == 'красный':
+            if color.lower() == 'красный':
                 color = '#FF0000'
             elif color.lower() == 'синий':
                 color = '#1E90FF'
