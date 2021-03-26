@@ -39,20 +39,19 @@ def hexagon (c, d):
     turtle.end_fill()
     turtle.right(30)
     turtle.up()
-    return''
 
 def color_hexagon (n, i):
     for e in range(0, n):
         if (i % 2) == 1:
             if (e % 2) == 0:
-                c = 'yellow'
+                c = color_2
             else:
-                c = 'red'
+                c = color_1
         else:
             if (e % 2) == 1:
-                c = 'yellow'
+                c = color_2
             else:
-                c = 'red'
+                c = color_1
         print(hexagon(c, d))
         turtle.forward(500/get_num_hexagons)
 
@@ -65,7 +64,7 @@ get_num_hexagons = num_hexagons()
 turtle.reset()
 turtle.screensize(500, 500)
 turtle.width(2)
-d = 500 / get_num_hexagons / math.sqrt(3) #
+d = 500 / get_num_hexagons / math.sqrt(3)
 turtle.up()
 turtle.color('black')
 
@@ -74,7 +73,7 @@ for i in range(0, get_num_hexagons//2):
     print(color_hexagon (get_num_hexagons, i))
     turtle.setposition(-250, 250 - 3.5 * d - (3 * d) * i)
     print(color_hexagon (get_num_hexagons, i))
-if (n % 2) != 0:
+if (get_num_hexagons % 2) != 0:
     turtle.setposition(-250 + (250 / get_num_hexagons), 250 - 2 * d - 3 * d * (get_num_hexagons//2))
     print(color_hexagon (get_num_hexagons, get_num_hexagons//2))
 turtle.hideturtle()
