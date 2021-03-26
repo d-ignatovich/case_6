@@ -9,6 +9,7 @@ def main():
     s = input("Пожалуйста, введите цвет: ")
     while True:
         if s.lower() in color:
+            s=s
             k = input("Пожалуйста, введите цвет: ")
             p(k)
         else:
@@ -19,6 +20,7 @@ def main():
 def p(k):
     while True:
         if k.lower() in color:
+            k=k
             print("Пожалуйста, введите количество шестиугольников, располагаемых в ряд: ")
             exit()
         else:
