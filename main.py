@@ -15,16 +15,6 @@ def color():
             print("'" + color + "'" + "не является верным значением.", end='')
             color = input("Пожалуйста, повторите попытку: ")
             continue
-            
-def p(color2):
-    while True:
-        if color2.lower() in color:
-            break
-        else:
-            print("'" + color2 + "'" + "не является верным значением.", end="")
-            color2 = input(" Пожалуйста, повторите попытку: ")
-            continue
-
 
 def num_hexagons():
     while True:
