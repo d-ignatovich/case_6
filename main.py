@@ -30,16 +30,17 @@ def p(color2):
             continue
 main()
 
-while True:
-    try:
-        get_num_hexagons = int(input('Введите количество шестиугольников: '))
-        if 4 <= get_num_hexagons <= 20:
-           break
-        else:
-            print('Введите число от 4 до 20')
-    except ValueError:
-        print('Неверный формат')
-print(get_num_hexagons)
+def num_hexagons():
+    while True:
+        try:
+            get_num_hexagons = int(input('Введите количество шестиугольников: '))
+            if 4 <= get_num_hexagons <= 20:
+                return (get_num_hexagons)
+            break
+            else:
+                print('Введите число от 4 до 20')
+        except ValueError:
+            print('Неверный формат')
 
 import turtle
 import math
