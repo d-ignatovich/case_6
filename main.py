@@ -3,19 +3,19 @@
 Игнатович Д. (60%), Миллер А. (), Пойлова Е. ()
 
 """ 
-color = ['красный', "синий", "зеленый", "желтый", "оранжевый", "пурпурный", "розовый"]
-def main():
-    print("Допустимые цвета заливки:"+"\n"+" красный"+"\n"+" синий"+"\n"+" зеленый"+'\n'+" желтый"+'\n'+" оранжевый"+"\n"+" пурпурный"+"\n"+" розовый")
-    color1 = input("Пожалуйста, введите первый цвет: ")
+color_lists = ['красный', "синий", "зеленый", "желтый", "оранжевый", "пурпурный", "розовый"]
+def color():
+    
+    color = input("Пожалуйста, введите цвет: ")
     while True:
-        if color1.lower() in color:
-            color2 = input("Пожалуйста, введите второй цвет: ")
-            p(color2)
+        if color.lower() in color_lists:
+            return color
             break
         else:
-            print("'" + color1 + "'" + "не является верным значением.", end='')
-            color1 = input("Пожалуйста, повторите попытку: ")
+            print("'" + color + "'" + "не является верным значением.", end='')
+            color = input("Пожалуйста, повторите попытку: ")
             continue
+            
 def p(color2):
     while True:
         if color2.lower() in color:
@@ -24,7 +24,7 @@ def p(color2):
             print("'" + color2 + "'" + "не является верным значением.", end="")
             color2 = input(" Пожалуйста, повторите попытку: ")
             continue
-main()
+
 
 def num_hexagons():
     while True:
@@ -37,10 +37,7 @@ def num_hexagons():
                 print('Введите число от 4 до 20')
         except ValueError:
             print('Неверный формат')
-
-import turtle
-import math
-
+            
 def hexagon (c, d):
     turtle.down()
     turtle.left(30)
@@ -69,7 +66,12 @@ def color_hexagon (n, i):
         print(hexagon(c, d))
         turtle.forward(500/get_num_hexagons)
 
-
+import turtle
+import math
+print("Допустимые цвета заливки:"+"\n"+" красный"+"\n"+" синий"+"\n"+" зеленый"+'\n'+" желтый"+'\n'+" оранжевый"+"\n"+" пурпурный"+"\n"+" розовый")
+color_1 = color()
+color_2 = color()
+get_num_hexagons = num_hexagons()
 turtle.reset()
 turtle.screensize(500, 500)
 turtle.width(2)
