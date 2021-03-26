@@ -10,7 +10,7 @@ def main():
     while True:
         if color1.lower() in color:
             color1=color1
-            color2 = input("Пожалуйста, введите цвет: ")
+            color2 = input("Пожалуйста, введите первый цвет: ")
             p(color2)
         else:
             print("'" + color1 + "'" + "не является верным значением.", end='')
@@ -21,7 +21,7 @@ def p(color2):
     while True:
         if color2.lower() in color:
             color2=color2
-            print("Пожалуйста, введите количество шестиугольников, располагаемых в ряд: ")
+            print("Пожалуйста, введите второй цвет: ")
             break
         else:
             print("'" + color2 + "'" + "не является верным значением.", end="")
