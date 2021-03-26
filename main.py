@@ -42,10 +42,10 @@ def num_hexagons():
         except ValueError:
             print('Неверный формат')
             
-def hexagon (c, d):
+def hexagon(color, d):
     turtle.down()
     turtle.left(30)
-    turtle.fillcolor(c)
+    turtle.fillcolor(color)
     turtle.begin_fill()
     for i in range(0, 6):
         turtle.forward(d)
@@ -54,42 +54,46 @@ def hexagon (c, d):
     turtle.right(30)
     turtle.up()
 
-def color_hexagon (n, i):
-    for e in range(0, n):
+
+def color_hexagon(get_num_hexagons, i):
+    for e in range(0, get_num_hexagons):
         if (i % 2) == 1:
             if (e % 2) == 0:
-                c = color_2
+                color = color_2
             else:
-                c = color_1
+                color = color_1
         else:
             if (e % 2) == 1:
-                c = color_2
+                color = color_2
             else:
-                c = color_1
-        print(hexagon(c, d))
-        turtle.forward(500/get_num_hexagons)
+                color = color_1
+        hexagon(color, d)
+        turtle.forward(500 / get_num_hexagons)
+
 
 import turtle
 import math
-print("Допустимые цвета заливки:"+"\n"+" красный"+"\n"+" синий"+"\n"+" зеленый"+'\n'+" желтый"+'\n'+" оранжевый"+"\n"+" пурпурный"+"\n"+" розовый")
+
+print("Допустимые цвета заливки:" + "\n" + " красный" + "\n" + " синий" + "\n" + " зеленый" + '\n' + " желтый" + '\n' + " оранжевый" + "\n" + " пурпурный" + "\n" + " розовый")
 color_1 = color()
 color_2 = color()
 get_num_hexagons = num_hexagons()
 turtle.reset()
 turtle.screensize(500, 500)
 turtle.width(2)
+turtle.speed(100)
 d = 500 / get_num_hexagons / math.sqrt(3)
 turtle.up()
 turtle.color('black')
 
-for i in range(0, get_num_hexagons//2):
+for i in range(0, get_num_hexagons // 2):
     turtle.setposition(-250 + (250 / get_num_hexagons), 250 - 2 * d - 3 * d * i)
-    print(color_hexagon (get_num_hexagons, i))
+    color_hexagon(get_num_hexagons, i)
     turtle.setposition(-250, 250 - 3.5 * d - (3 * d) * i)
-    print(color_hexagon (get_num_hexagons, i))
+    color_hexagon(get_num_hexagons, i)
 if (get_num_hexagons % 2) != 0:
-    turtle.setposition(-250 + (250 / get_num_hexagons), 250 - 2 * d - 3 * d * (get_num_hexagons//2))
-    print(color_hexagon (get_num_hexagons, get_num_hexagons//2))
+    turtle.setposition(-250 + (250 / get_num_hexagons), 250 - 2 * d - 3 * d * (get_num_hexagons // 2))
+    color_hexagon(get_num_hexagons, get_num_hexagons // 2)
 turtle.hideturtle()
 turtle.done()
 
