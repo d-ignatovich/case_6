@@ -9,24 +9,20 @@ def main():
     color1 = input("Пожалуйста, введите первый цвет: ")
     while True:
         if color1.lower() in color:
-            color1=color1
             color2 = input("Пожалуйста, введите второй цвет: ")
             p(color2)
             break
         else:
             print("'" + color1 + "'" + "не является верным значением.", end='')
-            t = input("Пожалуйста, повторите попытку: ")
-            color1 = t
+            color1 = input("Пожалуйста, повторите попытку: ")
             continue
 def p(color2):
     while True:
         if color2.lower() in color:
-            color2=color2
             break
         else:
             print("'" + color2 + "'" + "не является верным значением.", end="")
-            t = input(" Пожалуйста, повторите попытку: ")
-            color2 = t
+            color2 = input(" Пожалуйста, повторите попытку: ")
             continue
 main()
 
@@ -36,7 +32,7 @@ def num_hexagons():
             get_num_hexagons = int(input('Введите количество шестиугольников: '))
             if 4 <= get_num_hexagons <= 20:
                 return (get_num_hexagons)
-            break
+                break
             else:
                 print('Введите число от 4 до 20')
         except ValueError:
