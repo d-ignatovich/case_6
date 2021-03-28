@@ -3,9 +3,9 @@
 Игнатович Д. (60%), Миллер А. (30%), Пойлова Е. (40%)
 
 """ 
-color_lists = ['красный', "синий", "зеленый", "желтый", "оранжевый", "пурпурный", "розовый"]
+#Function that choosing a color to paint over.
 def color():
-    
+    color_lists = ['красный', "синий", "зеленый", "желтый", "оранжевый", "пурпурный", "розовый"]
     color = input("Пожалуйста, введите цвет: ")
     while True:
         if color.lower() in color_lists:
@@ -30,6 +30,7 @@ def color():
             color = input("Пожалуйста, повторите попытку: ")
             continue
 
+#Function that checking the correctness of entering the number of hexagons.
 def num_hexagons():
     while True:
         try:
@@ -41,7 +42,8 @@ def num_hexagons():
                 print('Введите число от 4 до 20')
         except ValueError:
             print('Неверный формат')
-            
+
+#Function that drawing a hexagon.            
 def hexagon(color, d):
     turtle.down()
     turtle.left(30)
@@ -54,7 +56,7 @@ def hexagon(color, d):
     turtle.right(30)
     turtle.up()
 
-
+#Function that alternates the colors of hexagons.
 def color_hexagon(get_num_hexagons, i):
     for e in range(0, get_num_hexagons):
         if (i % 2) == 1:
@@ -70,7 +72,7 @@ def color_hexagon(get_num_hexagons, i):
         hexagon(color, d)
         turtle.forward(500 / get_num_hexagons)
 
-
+        
 import turtle
 import math
 
@@ -82,10 +84,11 @@ turtle.reset()
 turtle.screensize(500, 500)
 turtle.width(2)
 turtle.speed(100)
-d = 500 / get_num_hexagons / math.sqrt(3)
+d = 500 / get_num_hexagons / math.sqrt(3) #Calculating the side length of a hexagon.
 turtle.up()
 turtle.color('black')
 
+#Output of hexagons by rows.
 for i in range(0, get_num_hexagons // 2):
     turtle.setposition(-250 + (250 / get_num_hexagons), 250 - 2 * d - 3 * d * i)
     color_hexagon(get_num_hexagons, i)
@@ -94,6 +97,7 @@ for i in range(0, get_num_hexagons // 2):
 if (get_num_hexagons % 2) != 0:
     turtle.setposition(-250 + (250 / get_num_hexagons), 250 - 2 * d - 3 * d * (get_num_hexagons // 2))
     color_hexagon(get_num_hexagons, get_num_hexagons // 2)
+
 turtle.hideturtle()
 turtle.done()
 
